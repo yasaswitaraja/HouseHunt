@@ -1,0 +1,1102 @@
+/* =========================
+   HOUSEHUNT DARK THEME
+========================= */
+
+:root {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #ececec;
+    background: #212121;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: #212121;
+    color: #ececec;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.hh-navbar {
+    background: #171717;
+    border-bottom: 1px solid #333333;
+    min-height: 64px;
+}
+
+.hh-brand {
+    color: #f5f5f5 !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.hh-nav-link {
+    color: #b8b8b8 !important;
+    margin-left: 18px;
+    transition: color 0.2s ease;
+}
+
+.hh-nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hh-btn {
+    background: #10a37f;
+    border: 1px solid #10a37f;
+    color: white;
+    border-radius: 7px;
+    padding: 9px 18px;
+    transition: all 0.2s ease;
+}
+
+.hh-btn:hover {
+    background: #0d8f70;
+    border-color: #0d8f70;
+    color: white;
+}
+
+.hh-btn-outline {
+    background: transparent;
+    border: 1px solid #555555;
+    color: #eeeeee;
+    border-radius: 7px;
+    padding: 9px 18px;
+}
+
+.hh-btn-outline:hover {
+    background: #2f2f2f;
+    color: white;
+}
+
+/* =========================
+   HOME HERO
+========================= */
+
+.hh-hero {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    background: #212121;
+}
+
+.hh-hero-content {
+    max-width: 760px;
+}
+
+.hh-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.hh-hero p {
+    color: #a0a0a0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.hh-search-box {
+    margin-top: 35px;
+    padding: 10px;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+}
+
+.hh-search-box input,
+.hh-search-box select {
+    background: #212121;
+    border: 1px solid #444444;
+    color: #eeeeee;
+    border-radius: 7px;
+    padding: 12px;
+}
+
+.hh-search-box input::placeholder {
+    color: #888888;
+}
+
+.hh-search-box input:focus,
+.hh-search-box select:focus {
+    background: #212121;
+    color: white;
+    border-color: #10a37f;
+    box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.15);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.hh-section {
+    padding: 80px 0;
+}
+
+.hh-section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.hh-muted {
+    color: #999999;
+}
+
+/* =========================
+   PROPERTY CARD
+========================= */
+
+.hh-card {
+    height: 100%;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.hh-card:hover {
+    transform: translateY(-3px);
+    border-color: #555555;
+}
+
+.hh-card-image {
+    height: 210px;
+    width: 100%;
+    object-fit: cover;
+    background: #303030;
+}
+
+.hh-card-body {
+    padding: 20px;
+}
+
+.hh-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.hh-price {
+    color: #10a37f;
+    font-weight: 600;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.hh-form-container {
+    max-width: 480px;
+    margin: 70px auto;
+}
+
+.hh-form-card {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.hh-form-control {
+    background: #212121 !important;
+    border: 1px solid #444444 !important;
+    color: #eeeeee !important;
+    border-radius: 7px;
+    padding: 11px 13px;
+}
+
+.hh-form-control::placeholder {
+    color: #777777;
+}
+
+.hh-form-control:focus {
+    border-color: #10a37f !important;
+    box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.15) !important;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.hh-footer {
+    background: #171717;
+    border-top: 1px solid #333333;
+    padding: 30px 0;
+    color: #888888;
+}
+
+/* =========================
+   PROPERTY DETAILS
+========================= */
+
+.hh-detail-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 14px;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+}
+
+.hh-no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888888;
+    font-size: 1rem;
+}
+
+.hh-detail-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.hh-detail-price {
+    margin-top: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #10a37f;
+}
+
+.hh-detail-price span {
+    font-size: 1rem;
+    color: #999999;
+    margin-left: 5px;
+    font-weight: 400;
+}
+
+.hh-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 9px;
+}
+
+.hh-info-box strong {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.hh-detail-section {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 25px;
+    height: 100%;
+}
+
+.hh-detail-section h3,
+.hh-detail-section h4 {
+    font-weight: 600;
+}
+/* =========================
+   BOOKINGS
+========================= */
+
+.hh-booking-card {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 24px;
+    height: 100%;
+}
+
+.hh-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.hh-status-pending {
+    background: #3a3320;
+    color: #e5c76b;
+}
+
+.hh-status-approved {
+    background: #173b31;
+    color: #65d6b3;
+}
+
+.hh-status-rejected {
+    background: #3d2424;
+    color: #ed8b8b;
+}
+
+.hh-status-cancelled {
+    background: #303030;
+    color: #999999;
+}
+
+.hh-cancel-btn {
+    background: transparent;
+    border: 1px solid #6b4141;
+    color: #e28b8b;
+    border-radius: 7px;
+    padding: 8px 15px;
+}
+
+.hh-cancel-btn:hover {
+    background: #3d2424;
+    color: #f0a0a0;
+}
+
+.hh-empty-state {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 60px 20px;
+}
+
+/* =========================
+   ADMIN DASHBOARD
+========================= */
+
+.hh-admin-stat {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 22px;
+    height: 100%;
+}
+
+.hh-admin-stat span {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.hh-admin-stat strong {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* =========================
+   ADMIN TABLE
+========================= */
+
+.hh-admin-table-wrapper {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hh-admin-table {
+    margin-bottom: 0;
+    color: #eeeeee;
+    --bs-table-bg: #2a2a2a;
+    --bs-table-color: #eeeeee;
+    --bs-table-border-color: #3a3a3a;
+}
+
+.hh-admin-table thead {
+    background: #171717;
+}
+
+.hh-admin-table th {
+    color: #b8b8b8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 15px;
+    white-space: nowrap;
+}
+
+.hh-admin-table td {
+    padding: 15px;
+    vertical-align: middle;
+    border-color: #3a3a3a;
+}
+
+.hh-admin-table tbody tr:hover {
+    --bs-table-hover-bg: #303030;
+}
+
+/* =========================
+   ADMIN ROLE
+========================= */
+
+.hh-admin-role {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #303030;
+    color: #b8b8b8;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+/* ==========================================
+   PROPERTIES PAGE - DARK MODE OVERRIDES
+   ========================================== */
+
+.hh-filter-card {
+    background: #171717 !important;
+    border: 1px solid #333333 !important;
+    border-radius: 14px;
+    box-shadow: none;
+}
+
+.hh-input {
+    background-color: #212121 !important;
+    color: #ececec !important;
+    border: 1px solid #444444 !important;
+}
+
+.hh-input:focus {
+    background-color: #212121 !important;
+    color: #ffffff !important;
+    border-color: #10a37f !important;
+    box-shadow: 0 0 0 0.15rem rgba(16, 163, 127, 0.18) !important;
+}
+
+.hh-input::placeholder {
+    color: #888888 !important;
+}
+
+.hh-input option {
+    background: #212121;
+    color: #ffffff;
+}
+
+.hh-label {
+    color: #b8b8b8 !important;
+}
+
+.hh-results-count {
+    color: #888888;
+}
+
+.hh-muted {
+    color: #888888;
+}
+
+
+/* PROPERTY CARD */
+
+.hh-property-card {
+    background: #171717 !important;
+    color: #ececec !important;
+    border: 1px solid #333333 !important;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: none !important;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.hh-property-card:hover {
+    transform: translateY(-4px);
+    border-color: #10a37f !important;
+}
+
+
+/* PROPERTY IMAGE */
+
+.hh-property-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #111111;
+}
+
+.hh-property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.hh-property-card:hover .hh-property-image img {
+    transform: scale(1.04);
+}
+
+
+/* PROPERTY TYPE */
+
+.hh-property-image .hh-property-type {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    background: rgba(15, 15, 15, 0.88);
+    color: #ffffff;
+
+    padding: 6px 11px;
+    border-radius: 20px;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    border: 1px solid #444444;
+}
+
+
+/* PROPERTY CONTENT */
+
+.hh-property-content {
+    padding: 20px;
+    background: #171717 !important;
+}
+
+.hh-property-title {
+    color: #f1f1f1 !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.hh-property-location {
+    color: #999999 !important;
+    font-size: 0.92rem;
+    margin-bottom: 12px;
+}
+
+.hh-property-description {
+    color: #aaaaaa !important;
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    margin-bottom: 18px;
+}
+
+
+/* PROPERTY DETAILS */
+
+.hh-property-meta {
+    display: flex;
+    gap: 14px;
+
+    padding: 14px 0;
+
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+
+    color: #b5b5b5;
+
+    font-size: 0.82rem;
+}
+
+.hh-property-meta span {
+    white-space: nowrap;
+}
+
+
+/* PRICE + BUTTON */
+
+.hh-property-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    padding-top: 18px;
+}
+
+.hh-price {
+    color: #10a37f !important;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.hh-price-period {
+    color: #777777;
+    font-size: 0.8rem;
+    margin-left: 3px;
+}
+
+.hh-view-btn {
+    color: #ffffff !important;
+    background: transparent;
+
+    border: 1px solid #555555;
+    border-radius: 8px;
+
+    padding: 8px 13px;
+
+    font-size: 0.85rem;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.hh-view-btn:hover {
+    background: #10a37f;
+    border-color: #10a37f;
+    color: #ffffff !important;
+}
+
+
+/* EMPTY STATE */
+
+.hh-empty-state {
+    background: #171717;
+    border: 1px solid #333333;
+    border-radius: 14px;
+}
+
+.hh-empty-state h3 {
+    color: #eeeeee;
+}
+
+.hh-empty-state p {
+    color: #888888;
+}
+
+
+/* ALERT */
+
+.hh-alert {
+    background: #2a1f1f !important;
+    color: #ffb4b4 !important;
+    border: 1px solid #593333 !important;
+    border-radius: 10px;
+    padding: 14px 18px;
+}
+
+
+/* SPINNER */
+
+.hh-spinner {
+    color: #10a37f !important;
+}
+/* ==========================================
+   BOOK PROPERTY PAGE
+   ========================================== */
+
+.hh-book-property-card,
+.hh-booking-form-card {
+    background: #171717;
+    border: 1px solid #333333;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.hh-book-property-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.hh-book-property-title {
+    color: #eeeeee;
+    font-size: 1.6rem;
+    font-weight: 650;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.hh-property-type-static {
+    display: inline-block;
+    background: #252525;
+    color: #10a37f;
+    border: 1px solid #3a3a3a;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+}
+
+.hh-book-price {
+    margin-top: 22px;
+}
+
+.hh-book-price span {
+    color: #10a37f;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.hh-book-price small {
+    color: #777777;
+    margin-left: 4px;
+}
+
+.hh-book-features {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #333333;
+}
+
+.hh-book-features span {
+    color: #aaaaaa;
+    background: #212121;
+    border: 1px solid #333333;
+    padding: 7px 10px;
+    border-radius: 7px;
+    font-size: 0.8rem;
+}
+
+.hh-booking-form-card {
+    padding: 35px;
+}
+
+.hh-booking-title {
+    color: #eeeeee;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hh-booking-subtitle {
+    color: #888888;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hh-rental-summary {
+    display: flex;
+    gap: 15px;
+    background: #212121;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.hh-rental-summary div {
+    flex: 1;
+}
+
+.hh-rental-summary span {
+    display: block;
+    color: #777777;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.hh-rental-summary strong {
+    color: #eeeeee;
+}
+
+.hh-booking-policy {
+    background: #1d1d1d;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.hh-booking-policy strong {
+    color: #eeeeee;
+}
+
+.hh-booking-policy ul {
+    color: #888888;
+    margin: 12px 0 0;
+    padding-left: 20px;
+}
+
+.hh-booking-policy li {
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.hh-success-alert {
+    background: #12251f;
+    border: 1px solid #1d6651;
+    color: #8de0c5;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.hh-success-link {
+    color: #10a37f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hh-success-link:hover {
+    color: #40c9a5;
+}
+
+@media (max-width: 768px) {
+
+    .hh-booking-form-card {
+        padding: 22px;
+    }
+
+    .hh-book-property-image {
+        height: 230px;
+    }
+
+    .hh-book-features {
+        flex-wrap: wrap;
+    }
+
+    .hh-rental-summary {
+        flex-direction: column;
+    }
+}
+/* ==========================================
+   MY BOOKINGS
+   ========================================== */
+
+.hh-empty-state {
+    background: #171717;
+    border: 1px solid #333333;
+    border-radius: 14px;
+    padding: 60px 30px;
+}
+
+.hh-empty-state h2 {
+    color: #eeeeee;
+    margin-bottom: 10px;
+}
+
+.hh-empty-state p {
+    color: #888888;
+}
+
+.hh-empty-icon {
+    color: #10a37f;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+
+/* BOOKING CARD */
+
+.hh-booking-card {
+    background: #171717;
+    border: 1px solid #333333;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.hh-booking-card:hover {
+    border-color: #10a37f;
+    transform: translateY(-3px);
+}
+
+
+/* PROPERTY HEADER */
+
+.hh-booking-property {
+    display: flex;
+    min-height: 145px;
+    border-bottom: 1px solid #333333;
+}
+
+.hh-booking-image {
+    width: 180px;
+    min-width: 180px;
+    background: #111111;
+    overflow: hidden;
+}
+
+.hh-booking-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hh-booking-image div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #10a37f;
+    font-weight: 600;
+}
+
+.hh-booking-property-info {
+    padding: 22px;
+}
+
+.hh-booking-property-info h2 {
+    color: #eeeeee;
+    font-size: 1.2rem;
+    margin-bottom: 7px;
+}
+
+.hh-booking-property-info p {
+    color: #888888;
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+}
+
+.hh-booking-property-info strong {
+    color: #10a37f;
+    font-size: 1.1rem;
+}
+
+.hh-booking-property-info small {
+    color: #777777;
+    font-size: 0.75rem;
+    margin-left: 3px;
+}
+
+
+/* BOOKING DETAILS */
+
+.hh-booking-details {
+    padding: 18px 22px;
+}
+
+.hh-booking-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 11px 0;
+    border-bottom: 1px solid #292929;
+}
+
+.hh-booking-row:last-child {
+    border-bottom: none;
+}
+
+.hh-booking-row span:first-child {
+    color: #777777;
+    font-size: 0.85rem;
+}
+
+.hh-booking-row strong {
+    color: #dddddd;
+    font-size: 0.85rem;
+}
+
+
+/* STATUS */
+
+.hh-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.hh-status-pending {
+    background: #302b1b;
+    color: #e6c96a;
+}
+
+.hh-status-approved {
+    background: #122b23;
+    color: #55d6ae;
+}
+
+.hh-status-rejected {
+    background: #301d1d;
+    color: #e58b8b;
+}
+
+.hh-status-cancelled {
+    background: #292929;
+    color: #999999;
+}
+
+
+/* ACTIONS */
+
+.hh-booking-actions {
+    display: flex;
+    gap: 10px;
+    padding: 16px 22px;
+    border-top: 1px solid #333333;
+}
+
+.hh-booking-view-btn {
+    flex: 1;
+    text-align: center;
+
+    color: #eeeeee;
+    text-decoration: none;
+
+    border: 1px solid #444444;
+    border-radius: 8px;
+
+    padding: 9px 12px;
+    font-size: 0.85rem;
+}
+
+.hh-booking-view-btn:hover {
+    color: #ffffff;
+    border-color: #10a37f;
+}
+
+.hh-cancel-btn {
+    flex: 1;
+
+    background: transparent;
+    color: #d98989;
+
+    border: 1px solid #543333;
+    border-radius: 8px;
+
+    padding: 9px 12px;
+
+    font-size: 0.85rem;
+}
+
+.hh-cancel-btn:hover {
+    background: #2b1c1c;
+    border-color: #8a4b4b;
+}
+
+.hh-cancel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+
+    .hh-booking-property {
+        flex-direction: column;
+    }
+
+    .hh-booking-image {
+        width: 100%;
+        height: 190px;
+    }
+
+    .hh-booking-actions {
+        flex-direction: column;
+    }
+
+}
