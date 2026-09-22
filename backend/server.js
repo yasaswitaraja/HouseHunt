@@ -33,8 +33,6 @@ app.use(
     })
 );
 
-app.options("*", cors());
-
 // Health check
 app.get("/", (req, res) => {
     res.json({
@@ -57,7 +55,6 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Render provides PORT through environment variables
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, "0.0.0.0", () => {
