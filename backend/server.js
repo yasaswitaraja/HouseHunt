@@ -22,12 +22,14 @@ app.use(express.json());
 const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:5174",
-    process.env.FRONTEND_URL
-].filter(Boolean);
+    "https://house-hunt-three.vercel.app"
+];
 
 app.use(
     cors({
-        origin: allowedOrigins
+        origin: allowedOrigins,
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"]
     })
 );
 
