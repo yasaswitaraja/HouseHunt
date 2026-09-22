@@ -33,6 +33,8 @@ app.use(
     })
 );
 
+app.options("*", cors());
+
 // Health check
 app.get("/", (req, res) => {
     res.json({
