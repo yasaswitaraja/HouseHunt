@@ -24,7 +24,7 @@
 
 ---
 
-## ✨ Overview
+## ✨  Overview
 
 **HouseHunt** is a full-stack rental property platform designed to simplify the process of discovering properties, managing bookings, and administering rental listings.
 
