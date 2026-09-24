@@ -14,7 +14,7 @@ HouseHunt is a full-stack rental property management platform built using the ME
 </p>
  
 ---
-
+ 
 ## Live Application
 
 **Frontend:**
