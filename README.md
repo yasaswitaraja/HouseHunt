@@ -1,4 +1,4 @@
-# 🏠 HouseHunt 
+# 🏠 HouseHunt  
 
 ### A modern full-stack rental property management platform built with the MERN stack.
 
