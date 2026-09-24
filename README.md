@@ -12,7 +12,7 @@ HouseHunt is a full-stack rental property management platform built using the ME
     <img src="https://img.shields.io/badge/Source%20Code-GitHub-181717?style=for-the-badge&logo=github" />
   </a>
 </p>
- 
+
 ---
  
 ## Live Application
