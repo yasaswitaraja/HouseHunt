@@ -42,7 +42,7 @@ The application supports two primary roles:
 ---
 
 # System Architecture
-
+ 
 ```text
                          CLIENT
                            |
