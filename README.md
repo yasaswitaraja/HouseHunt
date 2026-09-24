@@ -1,5 +1,5 @@
 # HouseHunt 
- 
+  
 ### Full-Stack Rental Property Management Platform
 
 HouseHunt is a full-stack rental property management platform built using the MERN stack. It provides a structured workflow for property discovery, filtering, booking requests, authentication, and administrative management.
