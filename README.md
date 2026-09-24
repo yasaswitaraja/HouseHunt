@@ -1,152 +1,577 @@
-# 🏠 HouseHunt  
+# HouseHunt
 
-### A modern full-stack rental property management platform built with the MERN stack.
+### Full-Stack Rental Property Management Platform
+
+HouseHunt is a full-stack rental property management platform built using the MERN stack. It provides a structured workflow for property discovery, filtering, booking requests, authentication, and administrative management.
 
 <p align="center">
   <a href="https://house-hunt-three.vercel.app/">
-    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-HouseHunt-10A37F?style=for-the-badge" alt="Live Demo"/>
+    <img src="https://img.shields.io/badge/Live%20Demo-HouseHunt-000000?style=for-the-badge" />
   </a>
   <a href="https://github.com/yasaswitaraja/HouseHunt">
-    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+    <img src="https://img.shields.io/badge/Source%20Code-GitHub-181717?style=for-the-badge&logo=github" />
   </a>
 </p>
 
-
-<p align="center">
-  <img src="https://img.shields.io/badge/React-18+-61DAFB?style=flat-square&logo=react&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Express.js-Backend-000000?style=flat-square&logo=express"/>
-  <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JWT-Authentication-000000?style=flat-square&logo=jsonwebtokens"/>
-  <img src="https://img.shields.io/badge/Vercel-Frontend-000000?style=flat-square&logo=vercel"/>
-  <img src="https://img.shields.io/badge/Render-Backend-46E3B7?style=flat-square&logo=render"/>
-</p>
-
 ---
 
-## ✨  Overview
+## Live Application
 
-**HouseHunt** is a full-stack rental property platform designed to simplify the process of discovering properties, managing bookings, and administering rental listings.
-
-The application provides separate experiences for regular users and administrators, with secure authentication, property filtering, booking management, approval workflows, and a responsive dark-themed interface.
-
-> **Search. Explore. Book. Manage.**
->
-> Everything you need for a simple rental-property workflow in one application.
-
----
-
-## 🌐 Live Application
-
-### 🚀 Try HouseHunt
-
-**Frontend:**  
+**Frontend:**
 https://house-hunt-three.vercel.app/
 
-**Backend API:**  
+**Backend API:**
 https://househunt-backend-pli8.onrender.com/
 
-**Source Code:**  
+**Repository:**
 https://github.com/yasaswitaraja/HouseHunt
 
 ---
 
-# 🎯 Key Features
+## Overview
 
-## 👤 User Features
+HouseHunt follows a client-server architecture where a React frontend communicates with a Node.js and Express backend through REST APIs.
 
-- 🔐 User registration and login
-- 🔑 JWT-based authentication
-- 🏠 Browse approved rental properties
-- 🔎 Search properties by location
-- 💰 Filter properties by price
-- 🏢 Filter by property type
-- 🛏️ Filter by number of bedrooms
-- 📄 View detailed property information
-- 📅 Create rental booking requests
-- 📊 Track booking status
-- ❌ Cancel bookings
-- 🔒 Protected user routes
-- 🚪 Secure logout
+The backend handles authentication, authorization, property management, and booking workflows, while MongoDB Atlas provides persistent cloud storage.
+
+The application supports two primary roles:
+
+* **User** — browse properties, search and filter listings, view property details, and submit booking requests.
+* **Administrator** — manage users, properties, bookings, approvals, and platform information.
 
 ---
 
-## 🛡️ Admin Features
-
-- 📊 Admin dashboard
-- 👥 View registered users
-- 🏘️ Manage property listings
-- ✅ Approve properties
-- ❌ Reject properties
-- 📅 View all bookings
-- ✅ Approve booking requests
-- ❌ Reject booking requests
-- 🔐 Role-based admin authorization
-- 📈 Platform statistics
-
----
-
-# 🧠 How HouseHunt Works
+# System Architecture
 
 ```text
-                    ┌──────────────────────┐
-                    │      HOUSEHUNT       │
-                    │   Rental Platform    │
-                    └──────────┬───────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-        ┌───────────┐    ┌───────────┐    ┌───────────┐
-        │   User    │    │ Property  │    │   Admin   │
-        │           │    │  System   │    │ Dashboard │
-        └─────┬─────┘    └─────┬─────┘    └─────┬─────┘
-              │                │                │
-              ▼                ▼                ▼
-        ┌───────────┐    ┌───────────┐    ┌───────────┐
-        │ Register  │    │  Search   │    │  Manage   │
-        │   Login   │    │  Filter   │    │ Properties│
-        └─────┬─────┘    └─────┬─────┘    └─────┬─────┘
-              │                │                │
-              └────────────┬───┴────────────────┘
-                           ▼
-                    ┌───────────────┐
-                    │    Booking    │
-                    │    System     │
-                    └───────┬───────┘
-                            │
-                            ▼
-                    ┌───────────────┐
-                    │    MongoDB    │
-                    │     Atlas     │
-                    └───────────────┘
+                         CLIENT
+                           |
+                           |
+                           v
+                +---------------------+
+                |       Vercel        |
+                |    React Frontend   |
+                +----------+----------+
+                           |
+                           | REST API
+                           | HTTP / JSON
+                           v
+                +---------------------+
+                |       Render        |
+                |  Node.js + Express  |
+                +----------+----------+
+                           |
+                           | Mongoose
+                           v
+                +---------------------+
+                |    MongoDB Atlas    |
+                |    Cloud Database   |
+                +---------------------+
+```
 
- System Architecture
+### Architecture Flow
 
+```text
+User
+  |
+  v
+React UI
+  |
+  v
+Axios / HTTP Request
+  |
+  v
+Express REST API
+  |
+  +---- Authentication
+  |
+  +---- Authorization
+  |
+  +---- Property Management
+  |
+  +---- Booking Management
+  |
+  v
+Mongoose
+  |
+  v
+MongoDB Atlas
+  |
+  v
+JSON Response
+  |
+  v
+React UI
+```
 
+---
 
-                         INTERNET
-                            │
-                            ▼
-                 ┌────────────────────┐
-                 │      Vercel        │
-                 │   React Frontend   │
-                 └─────────┬──────────┘
-                           │
-                       REST API
-                           │
-                           ▼
-                 ┌────────────────────┐
-                 │      Render        │
-                 │ Node + Express API │
-                 └─────────┬──────────┘
-                           │
-                        Mongoose
-                           │
-                           ▼
-                 ┌────────────────────┐
-                 │   MongoDB Atlas    │
-                 │    Cloud Database  │
-                 └────────────────────┘
+# Technology Stack
 
+## Frontend
 
+| Technology      | Purpose             |
+| --------------- | ------------------- |
+| React 18        | User interface      |
+| JavaScript      | Application logic   |
+| React Router    | Client-side routing |
+| Axios           | API communication   |
+| Bootstrap / CSS | Responsive UI       |
+
+## Backend
+
+| Technology | Purpose            |
+| ---------- | ------------------ |
+| Node.js    | JavaScript runtime |
+| Express.js | REST API framework |
+| Mongoose   | MongoDB ODM        |
+| JWT        | Authentication     |
+| bcrypt     | Password hashing   |
+
+## Database
+
+| Technology    | Purpose                |
+| ------------- | ---------------------- |
+| MongoDB       | Application database   |
+| MongoDB Atlas | Cloud database hosting |
+
+## Deployment
+
+| Service       | Component                 |
+| ------------- | ------------------------- |
+| Vercel        | React frontend            |
+| Render        | Node.js / Express backend |
+| MongoDB Atlas | Database                  |
+
+---
+
+# Core Features
+
+## User Features
+
+* User registration and login
+* JWT-based authentication
+* Protected routes
+* Property discovery
+* Location-based search
+* Price filtering
+* Property-type filtering
+* Bedroom filtering
+* Property detail pages
+* Booking requests
+* Booking status tracking
+* Booking cancellation
+* Secure logout
+
+## Administrative Features
+
+* Administrative dashboard
+* User management
+* Property listing management
+* Property approval and rejection
+* Booking management
+* Booking approval and rejection
+* Role-based authorization
+* Platform statistics
+
+---
+
+# Authentication Architecture
+
+HouseHunt uses JWT-based authentication to protect authenticated resources.
+
+```text
+                User
+                 |
+                 v
+          Login / Register
+                 |
+                 v
+          Express Backend
+                 |
+                 v
+       Validate Credentials
+                 |
+                 v
+          Generate JWT
+                 |
+                 v
+          Client Storage
+                 |
+                 v
+     Authenticated API Requests
+                 |
+                 v
+       Authentication Middleware
+                 |
+                 v
+          Protected Route
+```
+
+Passwords are hashed using bcrypt rather than being stored as plain text.
+
+JWT middleware is used to verify authenticated requests before allowing access to protected resources.
+
+---
+
+# Role-Based Authorization
+
+The application separates user and administrative functionality.
+
+```text
+                    Authenticated User
+                           |
+                           v
+                     JWT Validation
+                           |
+                           v
+                    Check User Role
+                           |
+              +------------+------------+
+              |                         |
+              v                         v
+            USER                       ADMIN
+              |                         |
+              v                         v
+       User Operations          Admin Operations
+              |                         |
+       Browse Properties        Manage Users
+       Search / Filter          Manage Properties
+       Create Booking           Approve Listings
+       Track Booking            Manage Bookings
+                                 View Statistics
+```
+
+This prevents regular users from accessing administrative operations.
+
+---
+
+# Property Management Workflow
+
+```text
+              Property Listing
+                     |
+                     v
+              Submit Property
+                     |
+                     v
+             Administrative Review
+                     |
+             +-------+-------+
+             |               |
+             v               v
+          Approved         Rejected
+             |
+             v
+      Available to Users
+             |
+             v
+       Search / Filter
+             |
+             v
+       View Property
+             |
+             v
+       Booking Request
+```
+
+---
+
+# Booking Workflow
+
+```text
+User
+ |
+ | Select Property
+ v
+Property Details
+ |
+ | Submit Booking
+ v
+Booking Request
+ |
+ v
+Admin Review
+ |
+ +-------------------+
+ |                   |
+ v                   v
+Approved           Rejected
+ |                   |
+ v                   v
+Booking Status     Status Updated
+Updated
+```
+
+---
+
+# Database Architecture
+
+The primary application entities are users, properties, and bookings.
+
+```text
+                    MongoDB Atlas
+                         |
+          +--------------+--------------+
+          |              |              |
+          v              v              v
+       Users         Properties      Bookings
+          |              |              |
+          |              |              |
+          +--------------+--------------+
+                         |
+                    Relationships
+```
+
+### User
+
+```text
+User
+├── name
+├── email
+├── password
+└── role
+```
+
+### Property
+
+```text
+Property
+├── title
+├── location
+├── price
+├── propertyType
+├── bedrooms
+├── description
+└── status
+```
+
+### Booking
+
+```text
+Booking
+├── user
+├── property
+├── status
+└── booking information
+```
+
+---
+
+# API Communication
+
+The frontend communicates with the backend through REST APIs.
+
+```text
+React Component
+      |
+      v
+     Axios
+      |
+      v
+Express Route
+      |
+      v
+Controller / Business Logic
+      |
+      v
+Mongoose Model
+      |
+      v
+MongoDB Atlas
+      |
+      v
+JSON Response
+      |
+      v
+React State / UI
+```
+
+This separation allows the frontend and backend to be developed, deployed, and maintained independently.
+
+---
+
+# Project Structure
+
+```text
+HouseHunt/
+│
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── services/
+│       ├── assets/
+│       ├── App.jsx
+│       └── main.jsx
+│
+├── backend/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── config/
+│   └── server.js
+│
+├── .gitignore
+└── README.md
+```
+
+---
+
+# Deployment Architecture
+
+The application is deployed using separate services for each layer.
+
+```text
+                       Internet
+                           |
+                           v
+                    +-------------+
+                    |   Vercel    |
+                    |   Frontend  |
+                    +------+------+
+                           |
+                        REST API
+                           |
+                           v
+                    +-------------+
+                    |   Render    |
+                    |   Backend   |
+                    +------+------+
+                           |
+                       Mongoose
+                           |
+                           v
+                    +-------------+
+                    |  MongoDB    |
+                    |    Atlas    |
+                    +-------------+
+```
+
+This deployment model separates the presentation layer, application layer, and database layer.
+
+---
+
+# Local Development
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/yasaswitaraja/HouseHunt.git
+
+cd HouseHunt
+```
+
+## Install Frontend Dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+## Install Backend Dependencies
+
+```bash
+cd ../backend
+npm install
+```
+
+## Environment Variables
+
+Create a `.env` file inside the backend directory:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+Do not commit `.env` files or credentials to the repository.
+
+## Run the Backend
+
+```bash
+cd backend
+npm run dev
+```
+
+## Run the Frontend
+
+```bash
+cd frontend
+npm run dev
+```
+
+---
+
+# Security Considerations
+
+The application implements several common web application security practices:
+
+* JWT-based authentication
+* Password hashing using bcrypt
+* Protected API routes
+* Role-based authorization
+* Environment variables for sensitive configuration
+* Separation of frontend and backend services
+
+---
+
+# Future Improvements
+
+Potential future enhancements include:
+
+* Online payment integration
+* Property image storage using cloud storage
+* Interactive maps
+* Saved / favorite properties
+* Real-time notifications
+* Property reviews and ratings
+* User-property messaging
+* Advanced analytics dashboard
+* Improved mobile responsiveness
+
+---
+
+# Project Purpose
+
+HouseHunt was developed to gain practical experience in full-stack web development and to understand how modern web applications connect frontend interfaces, backend APIs, authentication systems, databases, and cloud deployment.
+
+The project demonstrates experience with:
+
+```text
+Frontend Development
+        ↓
+REST API Development
+        ↓
+Authentication & Authorization
+        ↓
+Database Integration
+        ↓
+CRUD Operations
+        ↓
+Cloud Deployment
+```
+
+---
+
+# Author
+
+**Yasaswita Raja**
+
+B.Tech — Artificial Intelligence & Data Science
+
+GitHub:
+https://github.com/yasaswitaraja
+
+LinkedIn:
+https://www.linkedin.com/in/yasaswita-raja/
+
+---
+
+<p align="center">
+  <strong>HouseHunt</strong><br>
+  Full-Stack Rental Property Management Platform
+</p>
